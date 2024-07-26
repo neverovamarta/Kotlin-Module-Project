@@ -17,14 +17,12 @@ class App {
         }
     }
 
-    private fun input(): Int? {
+    private fun input(): Int {
         var scanner = Scanner(System.`in`).nextLine().toIntOrNull()
 
-        if ((scanner != 1) or (scanner != 2) or (scanner != 0)) {
-            while ((scanner != 1) or (scanner != 2) or (scanner != 0)) {
-                println("Некорректный ввод. Введите номер действия, которое хотите совершить")
-                scanner = Scanner(System.`in`).nextLine().toIntOrNull()
-            }
+        while (scanner == null || (scanner != 1 && scanner != 2 && scanner != 0)) {
+            println("Некорректный ввод. Введите номер действия, которое хотите совершить")
+            scanner = Scanner(System.`in`).nextLine().toIntOrNull()
         }
         return scanner
     }

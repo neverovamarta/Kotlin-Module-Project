@@ -23,7 +23,10 @@ class Archive(val nameArchive: String) {
             }
 
             when (number) {
-                in 1..notesList.size -> showNoteText(number)
+                in 1..notesList.size -> {
+                    val noteText = showNoteText(number)
+                    println("Текст заметки: $noteText")
+                }
                 0 -> return
             }
         }
